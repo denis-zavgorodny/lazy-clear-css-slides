@@ -188,7 +188,78 @@
     </section>
 
     <section class="slide">
-        <h2>Finding Dead CSS, Harry Roberts</h2>
+        <h2>Finding Dead CSS</h2>
+        <figure>
+            <blockquote>
+                <p>How do we go about identifying this dead code? Tools like uncss, although very powerful, don’t quite fit the bill. What we need is an almost RUM-like solution—how can we see what code users actually see on-screen on a live site?</p>
+            </blockquote>
+            <figcaption>Harry Roberts</figcaption>
+        </figure>
+        <figure>
+            <img src="images/qr-dead-css.svg" width="20%" class="place bottom right" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Реализация</h2>
+        <pre>
+            <code><mark>.some .selector</mark> {</code>
+            <code class="mark">    background-image: url('/img/dead/some_selector.gif');</code>
+            <code>    color: red;</code>
+            <code>    padding: 0;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Идея</h2>
+        <ul>
+            <li>помечаем селекторы</li>
+            <li>включаем access логи сервера</li>
+            <li>накапливаем информацию</li>
+            <li>все что попало в access логи – живо</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Анализ</h2>
+        <ul>
+            <li value="-">дополнительные ресурсы у страницы</li>
+            <li value="-">нужно вручную пометить весь CSS код</li>
+            <li value="-">сложно анализировать access логи</li>
+            <li value="+">GIF можно не создавать и сделать rewrite на сервере</li>
+            <li value="+">пользователи сами накапливают статистику</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">RUM<br /><small>real user monitoring</small></h2>
+    </section>
+
+    <section class="slide">
+        <h2>Требования</h2>
+        <ul>
+            <li>анализ существующего CSS</li>
+            <li>автономный сбор и хранение данных</li>
+            <li>анализ динамического контента:
+                <ul>
+                    <li>модальные окна</li>
+                    <li>отложенно загружаемый контент</li>
+                </ul>
+            </li>
+            <li>повторное использование с тем же результатом</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Идея</h2>
+        <ul>
+            <li>отбираем все существующие селекторы в имеющемся CSS</li>
+            <li>тестируем отобранные селекторы на актуальность</li>
+            <li>тестирование и отбор актуальных селекторов проводится пассивно самими посетителями сайта</li>
+            <li>результат накапливаем в удаленной БД</li>
+            <li>очищаем CSS после накопления данных</li>
+        </ul>
     </section>
 
 
