@@ -119,22 +119,79 @@
     <section class="slide">
         <h2>UnCSS | Преимущества</h2>
         <ul>
-            <li>можно использовать в системах сборки: gulp, grunt, broccoli</li>
-            <li>есть online версия <a href="https://uncss-online.com/">https://uncss-online.com/</a></li>
-            <li>умеет анализировать <code>CSS</code>, добавленный на <code>JS</code></li>
-            <li>использует <code>JSDOM</code>, не требует запуска браузера</li>
-            <li>отлично подходит для статических сайтов</li>
+            <li value="+">можно использовать в системах сборки: gulp, grunt, broccoli</li>
+            <li value="+">есть online версия <a href="https://uncss-online.com/">https://uncss-online.com/</a></li>
+            <li value="+">умеет анализировать <code>CSS</code>, добавленный на <code>JS</code></li>
+            <li value="+">использует <code>JSDOM</code>, не требует запуска браузера</li>
+            <li value="+">отлично подходит для статических сайтов</li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>UnCSS | Недостатки</h2>
         <ul>
-            <li>анализирует стили на событии <code>onload</code></li>
-            <li>не умеет обрабатывать действия пользователя</li>
-
+            <li value="-">проводит анализ стилей только по событию <code>onload</code></li>
+            <li value="-">не умеет обрабатывать изменения <code>DOM</code></li>
+            <li value="-">не умеет обрабатывать закрытые разделы</li>
+            <li value="-"><em>отлично подходит для статических сайтов</em></li>
         </ul>
     </section>
+
+    <section class="slide">
+        <h2>uCSS</h2>
+        <ul>
+            <li>анализирует статические файлы или URL</li>
+            <li><code>Cheerio</code> для работы с <code>DOM</code></li>
+            <li><code>CSSOM</code> для парсинга CSS</li>
+        </ul>
+        <pre>npm install ucss</pre>
+    </section>
+
+    <section class="slide">
+        <h2>uCSS | Выводы</h2>
+        <ul>
+            <li>преимущества и недостатки как у <code>UnCSS</code></li>
+            <li value="-">не нашел интеграции с системами сборки</li>
+            <li value="-">не поддерживается, не было коммитов 2 года</li>
+            <li value="-">нет online версии</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">...</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Helium CSS</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Helium CSS</h2>
+        <pre>
+            <code>&lt;script src="<mark>helium.js</mark>"&gt;&lt;/script&gt;</code>
+            <code>&lt;script type="text/javascript"&gt;</code>
+            <code>    window.addEventListener('<mark>load</mark>', function(){</code>
+            <code class="mark">        helium.init();</code>
+            <code>    }, false);</code>
+            <code>&lt;/script&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Helium CSS | Выводы</h2>
+        <ul>
+            <li value="+">исполняется в браузере</li>
+            <li value="-">сложно встроить в линию сборки</li>
+            <li value="-">предоставляет информацию, но не понятно что с ней делать</li>
+            <li value="-">не поддерживается, не было коммитов 4 года</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS, Harry Roberts</h2>
+    </section>
+
+
 
 
 
