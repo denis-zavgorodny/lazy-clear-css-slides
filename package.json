@@ -1,0 +1,71 @@
+{
+  "_from": "shower-ribbon",
+  "_id": "shower-ribbon@3.1.3",
+  "_inBundle": false,
+  "_integrity": "sha512-CRkwxyaMuk/hdl7O1JympHxqFfCEF+mHe94ExupyuNlRZMjbZBjWLUIwXkDzfTZVjlXaq3pMLu2c2K8C4tQedQ==",
+  "_location": "/shower-ribbon",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "shower-ribbon",
+    "name": "shower-ribbon",
+    "escapedName": "shower-ribbon",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/",
+    "/shower"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-ribbon/-/shower-ribbon-3.1.3.tgz",
+  "_shasum": "ac471fe71c4b7ed8c8eda9bc3beaaab7427f895c",
+  "_spec": "shower-ribbon",
+  "_where": "/Users/deniszavgorodny/Documents/Доклады/wsd18",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/shower/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Ribbon theme for Shower HTML presentation engine",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "shower-core": "^2.1.0",
+    "stylelint": "^9.2.1"
+  },
+  "files": [
+    "fonts/**",
+    "pictures/**",
+    "styles/**",
+    "index.html",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "homepage": "https://github.com/shower/ribbon",
+  "keywords": [
+    "shower",
+    "presentation",
+    "ribbon",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "shower-ribbon",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/ribbon.git"
+  },
+  "scripts": {
+    "start": "live-server . --watch='fonts/*,pictures/*,styles/**,index.html'",
+    "test": "stylelint 'styles/**/*.css'"
+  },
+  "version": "3.1.3",
+  "dependencies": {
+    "uncss": "^0.16.2"
+  }
+}
