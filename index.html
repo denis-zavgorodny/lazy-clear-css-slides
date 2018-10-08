@@ -180,7 +180,7 @@
     <section class="slide">
         <h2 class="">Helium CSS | Результат</h2>
         <figure>
-            <img src="images/helium.png" width="80%" class="place bottom" alt="">
+            <img src="images/helium.png" width="77%" class="place bottom" alt="">
         </figure>
     </section>
 
@@ -240,7 +240,7 @@
     </section>
 
     <section class="slide">
-        <h2 class="shout">RUM<br /><small>real user monitoring</small></h2>
+        <h2 class="shout">RUM<br /><small>Real User Monitoring</small></h2>
     </section>
 
     <section class="slide">
@@ -269,10 +269,98 @@
         </ul>
     </section>
 
+    <section class="slide">
+        <h2>Инструменты</h2>
+        <ul>
+            <li>парсер AST для CSS</li>
+            <li>временное хранилище данных на клиенте</li>
+            <li>постоянное хранилище данных на сервере</li>
+        </ul>
+    </section>
 
+    <section class="slide">
+        <h2>Требования к парсеру в AST</h2>
+        <ul>
+            <li>нет требований к производительности</li>
+            <li>должен обрабатывать комментарии</li>
+            <li>простой и с хорошей документацией</li>
+        </ul>
+    </section>
 
+    <section class="slide">
+        <figure>
+            <img src="images/PostCSS_Logo.svg.png" class="cover" alt="">
+        </figure>
+    </section>
 
+    <section class="slide">
+        <h2>Парсер в AST</h2>
+        <br />
+        <table>
+            <tr>
+                <td width="33%" align="center"><img src="images/rework.jpeg" width="90%" alt=""></td>
+                <td width="33%" align="center"><img src="images/csstree.png" width="50%" alt=""></td>
+                <td width="33%" align="center"><img src="images/PostCSS_Logo.svg.png" width="70%" alt=""></td>
+            </tr>
+            <tr>
+                <td align="center">Rework CSS parser</td>
+                <td align="center">CSSTree</td>
+                <td align="center">PostCSS</td>
+            </tr>
+        </table>
+    </section>
 
+    <section class="slide">
+        <h2>Rework CSS parser</h2>
+        <pre>
+            <code>const parser = require('css')</code>
+            <code>...</code>
+            <code class="mark">var { stylesheet: { rules } } = parser.parse(cssString)</code>
+            <code><mark>walker</mark>(rules, (filtered) => {</code>
+            <code>    ...</code>
+            <code>}, walker);</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Rework CSS parser</h2>
+        <ul>
+            <li value="+">работает</li>
+            <li value="+">комментарии входят в AST как отдельный тип правил</li>
+            <li value="-">нет собственного метода обхода дерева</li>
+            <li value="-">коммит 4 года назад</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Rework устарел</h2>
+        <figure>
+            <img src="images/tweet1.jpg" class="place" width="50%" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>CSSTree</h2>
+        <pre>
+            <code>const csstree = require('css-tree');</code>
+            <code>...</code>
+            <code class="mark">var ast = csstree.parse(cssString);</code>
+            <code>csstree.<mark>walk</mark>(ast, function(node) {</code>
+            <code>    ...</code>
+            <code>});</code>
+            <code><span class="comment">//csstree.<mark>generate</mark>(ast)</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>CSSTree</h2>
+        <ul>
+            <li value="+">быстрый</li>
+            <li value="+">современный</li>
+            <li value="+">отличная документация и API</li>
+            <li value="-">комментарии не попадают в AST</li>
+        </ul>
+    </section>
 
 
     <section class="slide">
