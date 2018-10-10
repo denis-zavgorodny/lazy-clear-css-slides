@@ -288,12 +288,6 @@
     </section>
 
     <section class="slide">
-        <figure>
-            <img src="images/PostCSS_Logo.svg.png" class="cover" alt="">
-        </figure>
-    </section>
-
-    <section class="slide">
         <h2>Парсер в AST</h2>
         <br />
         <table>
@@ -358,9 +352,62 @@
             <li value="+">быстрый</li>
             <li value="+">современный</li>
             <li value="+">отличная документация и API</li>
-            <li value="-">комментарии не попадают в AST</li>
+            <li value="-">комментарии отбрасываются</li>
+            <li value="-">отбрасываются пробелы при генерации CSS из AST</li>
         </ul>
     </section>
+
+    <section class="slide">
+        <h2>PostCSS</h2>
+        <pre>
+            <code>const postcss = require('postcss');</code>
+            <code class="mark">const proc = postcss((ast) => {</code>
+            <code>    ast.<mark>walkRules</mark>(/^\D/, (rule) => {</code>
+            <code>        let { selector } = rule;</code>
+            <code>        ...</code>
+            <code>    });</code>
+            <code>}).process(cssString).then(result => {...});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>PostCSS</h2>
+        <ul>
+            <li value="+">быстрый</li>
+            <li value="+">современный</li>
+            <li value="+">отличная документация и API</li>
+            <li value="+">можно сохранить форматирование</li>
+            <li value="+">можно сгенерировать <code>sitemap</code></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Получаем список селекторов</h2>
+        <pre>
+            <code>ast.walkRules(/^\D/, (rule) => {</code>
+            <code>    let { selector } = rule;</code>
+            <code>    selector = selector.replace(/\n/g, '');</code>
+            <code>    selectors.push(...selector.split(','));</code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Получаем список селекторов</h2>
+<pre>
+    <code>[</code>
+    <code>    ".rightcol-profile .button-cancel",</code>
+    <code>    ".cart-step-3 .prb span",</code>
+    <code>    "#block-analogues-popup .prb span",</code>
+    <code>    ".cart-step-3 .prb.old<mark>::after</mark>",</code>
+    <code>    ...</code>
+    <code>]</code>
+
+</pre>
+    </section>
+
+
+
 
 
     <section class="slide">
