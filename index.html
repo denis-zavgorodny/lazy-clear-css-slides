@@ -352,8 +352,8 @@
             <li value="+">быстрый</li>
             <li value="+">современный</li>
             <li value="+">отличная документация и API</li>
-            <li value="-">комментарии отбрасываются</li>
-            <li value="-">отбрасываются пробелы при генерации CSS из AST</li>
+            <li value="-">отбрасываются комментарии</li>
+            <li value="-">отбрасываются пробелы, теряется форматирование</li>
         </ul>
     </section>
 
@@ -377,7 +377,6 @@
             <li value="+">современный</li>
             <li value="+">отличная документация и API</li>
             <li value="+">можно сохранить форматирование</li>
-            <li value="+">можно сгенерировать <code>sitemap</code></li>
         </ul>
     </section>
 
@@ -394,19 +393,74 @@
 
     <section class="slide">
         <h2>Получаем список селекторов</h2>
-<pre>
-    <code>[</code>
-    <code>    ".rightcol-profile .button-cancel",</code>
-    <code>    ".cart-step-3 .prb span",</code>
-    <code>    "#block-analogues-popup .prb span",</code>
-    <code>    ".cart-step-3 .prb.old<mark>::after</mark>",</code>
-    <code>    ...</code>
-    <code>]</code>
+        <pre>
+            <code>[</code>
+            <code>    ".rightcol-profile .button-cancel",</code>
+            <code>    ".cart-step-3 .prb span",</code>
+            <code>    "#block-analogues-popup .prb span",</code>
+            <code>    ".cart-step-3 .prb.old<mark>::after</mark>",</code>
+            <code>    ...</code>
+            <code>]</code>
 
-</pre>
+        </pre>
     </section>
 
+    <section class="slide">
+        <h2 class="shout">Что дальше?</h2>
+    </section>
 
+    <section class="slide">
+        <h2>Что дальше?</h2>
+        <ul>
+            <li>"заставляем" посетителей загрузить список селекторов</li>
+            <li>пользователи тестируют селекторы
+                <pre>
+                    <code>document.querySelector(<mark>selector</mark>)</code>
+                </pre>
+                и отбирают только существующие
+            </li>
+            <li>результат отбора сохраняем в <code>localStorage</code> и БД</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <pre>
+            <code>{</code>
+            <code>    "url1" : [</code>
+            <code>        ".rightcol-profile .button-cancel",</code>
+            <code>        ".cart-step-3 .prb span",</code>
+            <code>        ".selector1", ".selector2", ".selector3"</code>
+            <code>        ...</code>
+            <code>    ]</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Что-то забыли?</h2>
+        <ul>
+            <li>модальные окна</li>
+            <li>состояния UI компонентов</li>
+            <li>рендер компонентов на стороне клиента</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Событие</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Событие</h2>
+        <ul>
+            <li>использовали <code>DOM EventListener</code></li>
+            <li>добавили генерацию события для случаев изменения DOM</li>
+            <li>модифицировали JS код проекта</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        вставить блок-схему
+    </section>
 
 
 
