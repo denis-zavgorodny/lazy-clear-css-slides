@@ -453,6 +453,14 @@
 
     <section class="slide">
         <h2>Что-то забыли?</h2>
+        <figure>
+<img src="images/site-screen.jpg" class="place bottom middle" style="width: 70%; box-shadow: 0 0 20px 0 RGBA(0,0,0,0.5);"
+    alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Что-то забыли?</h2>
         <ul>
             <li>модальные окна</li>
             <li>состояния UI компонентов</li>
@@ -474,6 +482,49 @@
     </section>
 
     <section class="slide">
+        <h2 class="shout">Очищаем</h2>
+    </section>
+
+    <section class="slide">
+        <h2>С чем работаем?</h2>
+        <div class="columns two">
+            <div>
+                <h3>Rule | Правило</h3>
+                <pre style="font-size: 18px;">
+                    <code><mark>.title-search-item :hover</mark> {</code>
+                    <code>    <span class="comment">/* declaration */</span></code>
+                    <code>    prop: value;</code>
+                    <code>    ...</code>
+                    <code>}</code>
+                </pre>
+            </div>
+            <div>
+                <h3>At-rule | Директива</h3>
+                <pre style="font-size: 18px;">
+                    <code>@media screen and (max-width: 1200px) {</code>
+                    <code>    <span class="comment">/* rules */</span></code>
+                    <code>    ...</code>
+                    <code>}</code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Работаем с правилами и селекторами</h2>
+        <div><code>ast.walkRules()</code></div>
+        <pre>
+            <code>.title-search-item { ... }</code>
+            <code>.title-search-item <mark>a:hover</mark> { ... }</code>
+            <code>.title-search-item <mark>:hover</mark> { ... }</code>
+            <code>.cart-amount__title<mark>::after</mark> { ... }</code>
+        </pre>
+        <div>
+            Отбрасываем псевдоклассы и псевдоэлементы <code>/(>?\s?:[\S]+)/g</code>
+        </div>
+    </section>
+
+    <section class="slide">
         <h2>Схема работы</h2>
         <figure>
             <img src="images/css-clear-diagram.svg" class="bottom center" alt="">
@@ -490,21 +541,27 @@
             <li>...</li>
             <li>очищаем CSS файлы
                 <br />
-                <code>cssclear <mark>clear</mark> -f path/to/selectors.json ./css ./dest</code>
+                <code>cssclear <mark>clear</mark> -f path/to/live.json ./css ./dest</code>
             </li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>На клиенте</h2>
-        <pre>
+        <pre style="font-size:14px">
             <code>&lt;script&gt;</code>
-            <code>    var cssClear = {</code>
-            <code class="mark">        pathToSelectors: '/selectors.json'</code>
-            <code>    };</code>
-            <code>   ...</code>
+            <code>  var cssClear = {</code>
+            <code class="mark">    pathToSelectors: 'https://yourdomain.com/selectors.json',</code>
+            <code>    dataStoreProvider: {</code>
+            <code class="mark">      name: 'postData',</code>
+            <code>      options: {</code>
+            <code>        apiKey: "d58e3582afa99040e27b92b13c8f2280",</code>
+            <code class="mark">        URL: 'https://apidomain.com/save/point/'</code>
+            <code>      }</code>
+            <code>    }</code>
+            <code>  };</code>
             <code>&lt;/script&gt;</code>
-            <code class="mark">&lt;script type="module" src="/csscleaner.bundle.js"&gt;&lt;/script&gt;</code>
+            <code class="mark">&lt;script type="module" src="path/to/csscleaner.bundle.js"&gt;&lt;/script&gt;</code>
         </pre>
     </section>
 
