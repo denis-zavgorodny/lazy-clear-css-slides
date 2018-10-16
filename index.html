@@ -438,20 +438,6 @@
     </section>
 
     <section class="slide">
-        <h2>Результат в JSON</h2>
-        <pre style="font-size: 22px;">
-            <code>{</code>
-            <code>    "url1" : [</code>
-            <code>        ".rightcol-profile .button-cancel",</code>
-            <code>        ".cart-step-3 .prb span",</code>
-            <code>        ".selector1", ".selector2", ".selector3"</code>
-            <code>        ...</code>
-            <code>    ]</code>
-            <code>}</code>
-        </pre>
-    </section>
-
-    <section class="slide">
         <h2>Что-то забыли?</h2>
         <figure>
 <img src="images/site-screen.jpg" class="place bottom middle" style="width: 70%; box-shadow: 0 0 20px 0 RGBA(0,0,0,0.5);"
@@ -479,6 +465,61 @@
             <li>добавили генерацию события для случаев изменения DOM</li>
             <li><b><i>модифицировали JS код проекта</i></b></li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Где хранить?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Где хранить?</h2>
+        <ul>
+            <li>свой сервер с БД</li>
+<li><a target="_blank" href="https://firebase.google.com">Google Firebase</a> или любой другой SaaS (<a target="_blank" href="https://www.mongodb.com/cloud/atlas">MongoDB
+        Atlas</a> и др.)</li>
+            <li>еще что-то</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Свой сервер с БД</h2>
+        <ul>
+            <li value="+">он обычно есть</li>
+            <li value="+">легко интегрировать (например, POST запрос с клиента)</li>
+            <li value="-">дополнительная нагрузка на сервер</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Google Firebase</h2>
+        <ul>
+            <li value="+">есть бесплатный аккаунт, не требует дополнительных расходов</li>
+            <li value="+">не нагружается основная база и сервер</li>
+            <li value="+">относительная легкость в интеграции</li>
+            <li value="-">тяжеловесная клиентская библиотека (~ 100kb, gzip)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Результат в Firebase</h2>
+        <figure>
+            <img src="images/firebase.png" style="width: 78%" class="place bottom middle" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Результат в JSON</h2>
+        <pre style="font-size: 22px;">
+            <code>{</code>
+            <code>    "url" : "/index.html",</code>
+            <code>    "data" : [</code>
+            <code>        ".rightcol-profile .button-cancel",</code>
+            <code>        ".cart-step-3 .prb span",</code>
+            <code>        ".selector1", ".selector2", ".selector3"</code>
+            <code>        ...</code>
+            <code>    ]</code>
+            <code>}</code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -578,12 +619,36 @@
         </ul>
     </section>
 
+    <section class="slide">
+        <h2>Результат</h2>
+        <ul>
+            <li value="+">сократили CSS код в <b>3 раза</b> <br />
+                365кб не сжатого CSS против ~1200кб</li>
+            <li value="+">получили небольшой прирост в Google Insights</li>
+            <li value="+">получили инструмент для повторного использования</li>
+            <li value=";)">получили удовольствие</li>
+        </ul>
+        <figure>
+            <img src="images/qr-code-git.svg" width="20%" class="place bottom right" alt="">
+        </figure>
+    </section>
+
 
 
     <section class="slide">
-        <figure>
-            <img src="images/cover-start.jpg" class="cover" alt="">
-        </figure>
+        <h2>Спасибо!</h2>
+        <table class="simple-table">
+			<tbody><tr>
+				<td>
+					<p>
+						<big>Denis Zavgorodny</big><br>
+						web technologist, founder of @ChernivtsiJS,<br>co-founder @NodeSchool Chernivtsi
+					</p>
+					<p><a href="https://twitter.com/DenisZavgorodny">@DenisZavgorodny</a></p>
+					<p><a href="mailto:denis.zavgorodny@gmail.com">denis.zavgorodny@gmail.com</a></p>
+				</td>
+			</tr>
+		</tbody></table>
     </section>
 
 
