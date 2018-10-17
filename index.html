@@ -319,6 +319,45 @@
     </section>
 
     <section class="slide">
+        <h2>С чем работаем?</h2>
+        <div class="columns two">
+            <div>
+                <h3>Rule | Правило</h3>
+                <pre style="font-size: 18px;">
+                    <code><mark>.title-search-item :hover</mark> {</code>
+                    <code>    <span class="comment">/* declaration */</span></code>
+                    <code>    prop: value;</code>
+                    <code>    ...</code>
+                    <code>}</code>
+                </pre>
+            </div>
+            <div>
+                <h3>At-rule | Директива</h3>
+                <pre style="font-size: 18px;">
+                    <code>@media screen and (max-width: 1200px) {</code>
+                    <code>    <span class="comment">/* rules */</span></code>
+                    <code>    ...</code>
+                    <code>}</code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Работаем с правилами и селекторами</h2>
+        <div><code>ast.walkRules()</code></div>
+        <pre>
+            <code>.title-search-item { ... }</code>
+            <code>.title-search-item <mark>a:hover</mark> { ... }</code>
+            <code>.title-search-item <mark>:hover</mark> { ... }</code>
+            <code>.cart-amount__title<mark>::after</mark> { ... }</code>
+        </pre>
+        <div>
+            Отбрасываем псевдоклассы и псевдоэлементы <code>/(>?\s?:[\S]+)/g</code>
+        </div>
+    </section>
+
+    <section class="slide">
         <h2>Rework CSS parser</h2>
         <pre>
             <code>const parser = require('css')</code>
@@ -524,45 +563,6 @@
 
     <section class="slide">
         <h2 class="shout">Очищаем</h2>
-    </section>
-
-    <section class="slide">
-        <h2>С чем работаем?</h2>
-        <div class="columns two">
-            <div>
-                <h3>Rule | Правило</h3>
-                <pre style="font-size: 18px;">
-                    <code><mark>.title-search-item :hover</mark> {</code>
-                    <code>    <span class="comment">/* declaration */</span></code>
-                    <code>    prop: value;</code>
-                    <code>    ...</code>
-                    <code>}</code>
-                </pre>
-            </div>
-            <div>
-                <h3>At-rule | Директива</h3>
-                <pre style="font-size: 18px;">
-                    <code>@media screen and (max-width: 1200px) {</code>
-                    <code>    <span class="comment">/* rules */</span></code>
-                    <code>    ...</code>
-                    <code>}</code>
-                </pre>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2>Работаем с правилами и селекторами</h2>
-        <div><code>ast.walkRules()</code></div>
-        <pre>
-            <code>.title-search-item { ... }</code>
-            <code>.title-search-item <mark>a:hover</mark> { ... }</code>
-            <code>.title-search-item <mark>:hover</mark> { ... }</code>
-            <code>.cart-amount__title<mark>::after</mark> { ... }</code>
-        </pre>
-        <div>
-            Отбрасываем псевдоклассы и псевдоэлементы <code>/(>?\s?:[\S]+)/g</code>
-        </div>
     </section>
 
     <section class="slide">
